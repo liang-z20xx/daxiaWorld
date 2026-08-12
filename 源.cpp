@@ -2943,7 +2943,7 @@ int main() {
     bool isIntoGame = false;//check if player enter the game
     bool isRealGame = false;//enter the body of the game
     bool isIntoArt = false;
-    bool isIntoLook = 1;
+    bool isIntoLook = false;
     //bool isIntoLook2 = false; 全局变量
     bool isIntoLook3 = false;
     bool isIntoLook4 = false;
