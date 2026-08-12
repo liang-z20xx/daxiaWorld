@@ -513,6 +513,9 @@ void funb() {
         getmessage(&m, EM_KEY);
         getmessage(&m, EM_KEY);
         if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+            mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+            mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+            mciSendString(("play res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
             cls();
             backA();
             putimage_alpha(200, 50, &po);
@@ -534,6 +537,8 @@ void funb() {
             arrS[6] = 1;
             getmessage(&m, EM_KEY);
             getmessage(&m, EM_KEY);
+            mciSendString(("stop res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
+            mciSendString(("close res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
         }
         else {
             cls();
@@ -643,6 +648,9 @@ void funb() {
         }
     }
     else {
+        mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+        mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+        mciSendString(("play res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
         cls();
         backA();
         putimage_alpha(200, 50, &po);
@@ -655,6 +663,8 @@ void funb() {
         arrS[5] = 1;
         getmessage(&m, EM_KEY);
         getmessage(&m, EM_KEY);
+        mciSendString(("stop res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
+        mciSendString(("close res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
     }
 }
 
@@ -708,6 +718,9 @@ void func() {
             getmessage(&m, EM_KEY);
             getmessage(&m, EM_KEY);
             if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                mciSendString(("play res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                 cls();
                 backA();
                 putimage_alpha(200, 50, &po);
@@ -720,6 +733,8 @@ void func() {
                 arrS[7] = 1;
                 getmessage(&m, EM_KEY);
                 getmessage(&m, EM_KEY);
+                mciSendString(("stop res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
+                mciSendString(("close res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
             }
             else {
                 cls();
@@ -979,11 +994,14 @@ void fune() {
                 getmessage(&m, EM_KEY);
             }
             else {
+                mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                mciSendString(("play res\\mus\\命运交响曲.mp3"), 0, 0, 0);
                 cls();
                 backA();
                 putimage_alpha(200, 50, &po);
                 settextcolor(RED);
-                printStory(50, 270, 170, "M国火速投降！这是命运的舞蹈！", 900, 2);
+                printStory(50, 270, 170, "你“核威胁”他国签署和平协议，同时扼制核武器的研发，因为你，世界都变得和平！", 900, 2);
                 printStory(40, 200, 600, "等级：S+", 450, 1);
                 printStory(40, 750, 600, "任意键退出", 450, 1);
                 FlushBatchDraw();
@@ -991,6 +1009,8 @@ void fune() {
                 arrS[10] = 1;
                 getmessage(&m, EM_KEY);
                 getmessage(&m, EM_KEY);
+                mciSendString(("stop res\\mus\\命运交响曲.mp3"), 0, 0, 0);
+                mciSendString(("close res\\mus\\命运交响曲.mp3"), 0, 0, 0);
             }
         }
     }
@@ -1252,6 +1272,9 @@ void fund() {
                 else {
                     int b18 = rand() % 10;
                     if (b18 == 0) {
+                        mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                        mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                        mciSendString(("play res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                         cls();
                         backA();
                         putimage_alpha(200, 50, &pos);
@@ -1264,6 +1287,8 @@ void fund() {
                         arrS[11] = 1;
                         getmessage(&m, EM_KEY);
                         getmessage(&m, EM_KEY);
+                        mciSendString(("stop res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
+                        mciSendString(("close res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                     }
                     else {
                         cls();
@@ -1357,6 +1382,9 @@ void fund() {
                         getmessage(&m, EM_KEY);
                         getmessage(&m, EM_KEY);
                         if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                            mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                            mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                            mciSendString(("play res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                             cls();
                             backA();
                             putimage_alpha(200, 50, &po);
@@ -1369,6 +1397,8 @@ void fund() {
                             arrS[13] = 1;
                             getmessage(&m, EM_KEY);
                             getmessage(&m, EM_KEY);
+                            mciSendString(("stop res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
+                            mciSendString(("close res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                         }
                         else {
                             cls();
@@ -1538,6 +1568,9 @@ void funa() {
                     getmessage(&m, EM_KEY);
                     getmessage(&m, EM_KEY);
                     if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                        mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                        mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                        mciSendString(("play res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                         cls();
                         backA();
                         putimage_alpha(200, 50, &po);
@@ -1550,6 +1583,8 @@ void funa() {
                         arrS[0] = 1;
                         getmessage(&m, EM_KEY);
                         getmessage(&m, EM_KEY);
+                        mciSendString(("stop res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
+                        mciSendString(("close res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                     }
                     else {
                         cls();
@@ -1814,6 +1849,9 @@ void funa() {
                                         getmessage(&m, EM_KEY);
                                     }
                                     else {
+                                        mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                                        mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                                        mciSendString(("play res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                                         cls();
                                         backA();
                                         putimage_alpha(200, 50, &po);
@@ -1826,6 +1864,8 @@ void funa() {
                                         arrS[2] = 1;
                                         getmessage(&m, EM_KEY);
                                         getmessage(&m, EM_KEY);
+                                        mciSendString(("stop res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
+                                        mciSendString(("close res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                                     }
                                 }
                             }
@@ -2041,6 +2081,9 @@ void funa() {
                         getmessage(&m, EM_KEY);
                     }
                     else {
+                        mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                        mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                        mciSendString(("play res\\mus\\弱水三千.mp3"), 0, 0, 0);
                         cls();
                         backA();
                         putimage_alpha(200, 50, &po);
@@ -2053,6 +2096,8 @@ void funa() {
                         arrB[6] = 1;
                         getmessage(&m, EM_KEY);
                         getmessage(&m, EM_KEY);
+                        mciSendString(("stop res\\mus\\弱水三千.mp3"), 0, 0, 0);
+                        mciSendString(("close res\\mus\\弱水三千.mp3"), 0, 0, 0);
                     }
                 }
             }
@@ -2208,6 +2253,9 @@ void funa() {
                                         getmessage(&m, EM_KEY);
                                         getmessage(&m, EM_KEY);
                                         if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                                            mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                                            mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                                            mciSendString(("play res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                                             cls();
                                             backA();
                                             putimage_alpha(200, 50, &po);
@@ -2220,8 +2268,13 @@ void funa() {
                                             arrS[3] = 1;
                                             getmessage(&m, EM_KEY);
                                             getmessage(&m, EM_KEY);
+                                            mciSendString(("stop res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
+                                            mciSendString(("close res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                                         }
                                         else {
+                                            mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                                            mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                                            mciSendString(("play res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                                             cls();
                                             backA();
                                             putimage_alpha(200, 50, &po);
@@ -2234,6 +2287,8 @@ void funa() {
                                             arrS[4] = 1;
                                             getmessage(&m, EM_KEY);
                                             getmessage(&m, EM_KEY);
+                                            mciSendString(("stop res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
+                                            mciSendString(("close res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                                         }
                                     }
                                     else {
@@ -2448,6 +2503,9 @@ void funr() {
                 getmessage(&m, EM_KEY);
             }
             else {
+                mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                mciSendString(("play res\\mus\\花海.mp3"), 0, 0, 0);
                 cls();
                 backA();
                 putimage_alpha(200, 50, &po);
@@ -2488,6 +2546,8 @@ void funr() {
                 FlushBatchDraw();
                 getmessage(&m, EM_KEY);
                 getmessage(&m, EM_KEY);
+                mciSendString(("stop res\\mus\\花海.mp3"), 0, 0, 0);
+                mciSendString(("close res\\mus\\花海.mp3"), 0, 0, 0);
             }
         }
     }
@@ -2554,6 +2614,9 @@ void funq() {
     getmessage(&Lm, EM_KEY);
     getmessage(&Lm, EM_KEY);
     if (Lm.vkcode == 'M') {
+        mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+        mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+        mciSendString(("play res\\mus\\海阔天空.mp3"), 0, 0, 0);
         cls();
         backA();
         putimage_alpha(200, 50, &po);
@@ -2593,6 +2656,8 @@ void funq() {
         FlushBatchDraw();
         getmessage(&Lm, EM_KEY);
         getmessage(&Lm, EM_KEY);
+        mciSendString(("stop res\\mus\\海阔天空.mp3"), 0, 0, 0);
+        mciSendString(("close res\\mus\\海阔天空.mp3"), 0, 0, 0);
     }
     else {
         cls();
@@ -3560,6 +3625,9 @@ int main() {
                                                     getmessage(&m, EM_KEY);
                                                     getmessage(&m, EM_KEY);
                                                     if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                                                        mciSendString(("stop res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                                                        mciSendString(("close res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+                                                        mciSendString(("play res\\mus\\弱水三千.mp3"), 0, 0, 0);
                                                         cls();
                                                         backA();
                                                         putimage_alpha(200, 50, &po);
@@ -3572,6 +3640,8 @@ int main() {
                                                         arrB[13] = 1;
                                                         getmessage(&m, EM_KEY);
                                                         getmessage(&m, EM_KEY);
+                                                        mciSendString(("stop res\\mus\\弱水三千.mp3"), 0, 0, 0);
+                                                        mciSendString(("close res\\mus\\弱水三千.mp3"), 0, 0, 0);
                                                     }
                                                     else {
                                                         cls();
@@ -3831,6 +3901,9 @@ int main() {
                                     getmessage(&m, EM_KEY);
                                     getmessage(&m, EM_KEY);
                                     if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                                        mciSendString(("stop res\\mus\\Trip.mp3"), 0, 0, 0);
+                                        mciSendString(("close res\\mus\\Trip.mp3"), 0, 0, 0);
+                                        mciSendString(("play res\\mus\\弱水三千.mp3"), 0, 0, 0);
                                         cls();
                                         backA();
                                         putimage_alpha(200, 50, &po);
@@ -3843,6 +3916,8 @@ int main() {
                                         arrD[2] = 1;
                                         getmessage(&m, EM_KEY);
                                         getmessage(&m, EM_KEY);
+                                        mciSendString(("stop res\\mus\\弱水三千.mp3"), 0, 0, 0);
+                                        mciSendString(("close res\\mus\\弱水三千.mp3"), 0, 0, 0);
                                     }
                                     else {
                                         cls();
@@ -3865,6 +3940,9 @@ int main() {
                                             getmessage(&m, EM_KEY);
                                             getmessage(&m, EM_KEY);
                                             if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                                                mciSendString(("stop res\\mus\\Trip.mp3"), 0, 0, 0);
+                                                mciSendString(("close res\\mus\\Trip.mp3"), 0, 0, 0);
+                                                mciSendString(("play res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                                                 cls();
                                                 backA();
                                                 putimage_alpha(200, 50, &po);
@@ -3877,6 +3955,8 @@ int main() {
                                                 arrB[0] = 1;
                                                 getmessage(&m, EM_KEY);
                                                 getmessage(&m, EM_KEY);
+                                                mciSendString(("stop res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
+                                                mciSendString(("close res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                                             }
                                             else {
                                                 cls();
@@ -3931,6 +4011,9 @@ int main() {
                                 else {
                                     int b1 = rand() % 4;
                                     if (b1 < 3) {
+                                        mciSendString(("stop res\\mus\\Trip.mp3"), 0, 0, 0);
+                                        mciSendString(("close res\\mus\\Trip.mp3"), 0, 0, 0);
+                                        mciSendString(("play res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                                         cls();
                                         backA();
                                         putimage_alpha(200, 50, &pos);
@@ -3943,6 +4026,8 @@ int main() {
                                         arrA[0] = 1;
                                         getmessage(&m, EM_KEY);
                                         getmessage(&m, EM_KEY);
+                                        mciSendString(("stop res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
+                                        mciSendString(("close res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
                                     }
                                     else {
                                         cls();
@@ -4042,6 +4127,9 @@ int main() {
                                                 getmessage(&m, EM_KEY);
                                                 getmessage(&m, EM_KEY);
                                                 if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("play res\\mus\\traveler.mp3"), 0, 0, 0);
                                                     cls();
                                                     backA();
                                                     putimage_alpha(200, 50, &po);
@@ -4054,8 +4142,13 @@ int main() {
                                                     arrA[21] = 1;
                                                     getmessage(&m, EM_KEY);
                                                     getmessage(&m, EM_KEY);
+                                                    mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
                                                 }
                                                 else {
+                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("play res\\mus\\花海.mp3"), 0, 0, 0);
                                                     cls();
                                                     backA();
                                                     putimage_alpha(200, 50, &po);
@@ -4069,6 +4162,8 @@ int main() {
                                                     getmessage(&m, EM_KEY);
                                                     getmessage(&m, EM_KEY);
                                                     isIntoLook4 = true;
+                                                    mciSendString(("stop res\\mus\\花海.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\花海.mp3"), 0, 0, 0);
                                                 }
                                             }
                                             else {
@@ -4082,6 +4177,9 @@ int main() {
                                                 getmessage(&m, EM_KEY);
                                                 getmessage(&m, EM_KEY);
                                                 if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
+                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("play res\\mus\\花海.mp3"), 0, 0, 0);
                                                     cls();
                                                     backA();
                                                     putimage_alpha(200, 50, &po);
@@ -4102,6 +4200,8 @@ int main() {
                                                     FlushBatchDraw();
                                                     getmessage(&m, EM_KEY);
                                                     getmessage(&m, EM_KEY);
+                                                    mciSendString(("stop res\\mus\\花海.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\花海.mp3"), 0, 0, 0);
                                                 }
                                                 else {
                                                     cls();
@@ -4180,6 +4280,9 @@ int main() {
                                                 getmessage(&m, EM_KEY);
                                             }
                                             else {
+                                                mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                mciSendString(("play res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
                                                 cls();
                                                 backA();
                                                 putimage_alpha(200, 50, &po);
@@ -4193,6 +4296,8 @@ int main() {
                                                 getmessage(&m, EM_KEY);
                                                 getmessage(&m, EM_KEY);
                                                 isIntoLook3 = true;
+                                                mciSendString(("stop res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
+                                                mciSendString(("close res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
                                             }
                                         }
                                         else {
@@ -4255,10 +4360,16 @@ int main() {
                                                     }
                                                 }
                                                 else {
+                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("play res\\mus\\命运交响曲.mp3"), 0, 0, 0);
                                                     game();
                                                     while (peekmessage(&m, EM_KEY)) {
 
                                                     }
+                                                    mciSendString(("stop res\\mus\\命运交响曲.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\命运交响曲.mp3"), 0, 0, 0);
+                                                    mciSendString(("play res\\mus\\起风了.mp3"), 0, 0, 0);
                                                     if (score > 100) {
                                                         cls();
                                                         backA();
@@ -4419,6 +4530,9 @@ int main() {
                                                                     getmessage(&m, EM_KEY);
                                                                 }
                                                                 else {
+                                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                    mciSendString(("play res\\mus\\花海.mp3"), 0, 0, 0);
                                                                     cls();
                                                                     backA();
                                                                     putimage_alpha(200, 50, &po);
@@ -4459,6 +4573,8 @@ int main() {
                                                                     FlushBatchDraw();
                                                                     getmessage(&m, EM_KEY);
                                                                     getmessage(&m, EM_KEY);
+                                                                    mciSendString(("stop res\\mus\\花海.mp3"), 0, 0, 0);
+                                                                    mciSendString(("close res\\mus\\花海.mp3"), 0, 0, 0);
                                                                 }
                                                             }
                                                             else {
@@ -4482,6 +4598,9 @@ int main() {
                                                                     getmessage(&m, EM_KEY);
                                                                     getmessage(&m, EM_KEY);
                                                                     if (m.vkcode == 'M') {
+                                                                        mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                        mciSendString(("play res\\mus\\traveler.mp3"), 0, 0, 0);
                                                                         cls();
                                                                         backA();
                                                                         putimage_alpha(200, 50, &po);
@@ -4494,8 +4613,13 @@ int main() {
                                                                         arrS[21] = 1;
                                                                         getmessage(&m, EM_KEY);
                                                                         getmessage(&m, EM_KEY);
+                                                                        mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
                                                                     }
                                                                     else {
+                                                                        mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                        mciSendString(("play res\\mus\\海阔天空.mp3"), 0, 0, 0);
                                                                         cls();
                                                                         backA();
                                                                         putimage_alpha(200, 50, &po);
@@ -4508,6 +4632,8 @@ int main() {
                                                                         arrS[22] = 1;
                                                                         getmessage(&m, EM_KEY);
                                                                         getmessage(&m, EM_KEY);
+                                                                        mciSendString(("stop res\\mus\\海阔天空.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\海阔天空.mp3"), 0, 0, 0);
                                                                     }
                                                                 }
                                                                 else {
@@ -4604,6 +4730,9 @@ int main() {
                                                         }
                                                     }
                                                     else {
+                                                        mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                        mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                        mciSendString(("play res\\mus\\traveler.mp3"), 0, 0, 0);
                                                         cls();
                                                         backA();
                                                         putimage_alpha(200, 50, &po);
@@ -4616,6 +4745,8 @@ int main() {
                                                         arrA[26] = 1;
                                                         getmessage(&m, EM_KEY);
                                                         getmessage(&m, EM_KEY);
+                                                        mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                        mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
                                                     }
                                                 }
                                             }
@@ -4677,6 +4808,9 @@ int main() {
                                                     getmessage(&m, EM_KEY);
                                                 }
                                                 else {
+                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("play res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                                                     cls();
                                                     backA();
                                                     putimage_alpha(200, 50, &po);
@@ -4689,6 +4823,8 @@ int main() {
                                                     arrA[27] = 1;
                                                     getmessage(&m, EM_KEY);
                                                     getmessage(&m, EM_KEY);
+                                                    mciSendString(("stop res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
                                                 }
                                             }
                                             else {
@@ -4702,6 +4838,9 @@ int main() {
                                                 getmessage(&m, EM_KEY);
                                                 getmessage(&m, EM_KEY);
                                                 if (m.vkcode == 'M') {
+                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                    mciSendString(("play res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
                                                     cls();
                                                     backA();
                                                     putimage_alpha(200, 50, &po);
@@ -4714,6 +4853,8 @@ int main() {
                                                     arrS[23] = 1;
                                                     getmessage(&m, EM_KEY);
                                                     getmessage(&m, EM_KEY);
+                                                    mciSendString(("stop res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
                                                 }
                                                 else {
                                                     cls();
@@ -5018,6 +5159,9 @@ int main() {
                                                         getmessage(&m, EM_KEY);
                                                         getmessage(&m, EM_KEY);
                                                         if (m.vkcode == 'M') {
+                                                            mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                            mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                            mciSendString(("play res\\mus\\海阔天空.mp3"), 0, 0, 0);
                                                             cls();
                                                             backA();
                                                             putimage_alpha(200, 50, &po);
@@ -5057,9 +5201,14 @@ int main() {
                                                             FlushBatchDraw();
                                                             getmessage(&m, EM_KEY);
                                                             getmessage(&m, EM_KEY);
+                                                            mciSendString(("stop res\\mus\\海阔天空.mp3"), 0, 0, 0);
+                                                            mciSendString(("close res\\mus\\海阔天空.mp3"), 0, 0, 0);
                                                             cd();
                                                         }
                                                         else {
+                                                            mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                            mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                            mciSendString(("play res\\mus\\花海.mp3"), 0, 0, 0);
                                                             cls();
                                                             backA();
                                                             putimage_alpha(200, 50, &po);
@@ -5100,6 +5249,8 @@ int main() {
                                                             FlushBatchDraw();
                                                             getmessage(&m, EM_KEY);
                                                             getmessage(&m, EM_KEY);
+                                                            mciSendString(("stop res\\mus\\花海.mp3"), 0, 0, 0);
+                                                            mciSendString(("close res\\mus\\花海.mp3"), 0, 0, 0);
                                                             say();
                                                         }
                                                     }
@@ -5197,6 +5348,9 @@ int main() {
                                                                         getmessage(&m, EM_KEY);
                                                                     }
                                                                     else {
+                                                                        mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                        mciSendString(("play res\\mus\\traveler.mp3"), 0, 0, 0);
                                                                         cls();
                                                                         backA();
                                                                         putimage_alpha(200, 50, &pos);
@@ -5209,6 +5363,8 @@ int main() {
                                                                         arrA[32] = 1;
                                                                         getmessage(&m, EM_KEY);
                                                                         getmessage(&m, EM_KEY);
+                                                                        mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
                                                                     }
                                                                 }
                                                                 else {
@@ -5312,6 +5468,9 @@ int main() {
                                                                 getmessage(&m, EM_KEY);
                                                                 getmessage(&m, EM_KEY);
                                                                 if (m.vkcode == 'M') {
+                                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                    mciSendString(("play res\\mus\\traveler.mp3"), 0, 0, 0);
                                                                     cls();
                                                                     backA();
                                                                     putimage_alpha(200, 50, &po);
@@ -5325,6 +5484,8 @@ int main() {
                                                                     arrA[35] = 1;
                                                                     getmessage(&m, EM_KEY);
                                                                     getmessage(&m, EM_KEY);
+                                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
                                                                 }
                                                                 else {
                                                                     cls();
@@ -5351,6 +5512,9 @@ int main() {
                                                                         getmessage(&m, EM_KEY);
                                                                     }
                                                                     else {
+                                                                        mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                        mciSendString(("play res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
                                                                         cls();
                                                                         backA();
                                                                         putimage_alpha(200, 50, &po);
@@ -5363,6 +5527,8 @@ int main() {
                                                                         arrA[36] = 1;
                                                                         getmessage(&m, EM_KEY);
                                                                         getmessage(&m, EM_KEY);
+                                                                        mciSendString(("stop res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
                                                                     }
                                                                 }
                                                             }
@@ -5442,6 +5608,9 @@ int main() {
                                                                 }
                                                             }
                                                             else {
+                                                                mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                mciSendString(("play res\\mus\\traveler.mp3"), 0, 0, 0);
                                                                 cls();
                                                                 backA();
                                                                 putimage_alpha(200, 50, &po);
@@ -5454,6 +5623,8 @@ int main() {
                                                                 arrS[25] = 1;
                                                                 getmessage(&m, EM_KEY);
                                                                 getmessage(&m, EM_KEY);
+                                                                mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                                mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
                                                             }
                                                         }
                                                     }
