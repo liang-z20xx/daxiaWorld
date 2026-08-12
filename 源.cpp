@@ -2696,34 +2696,39 @@ void news() {
     loadimage(&ne2, "res\\pir\\new2.png");
     IMAGE ne3;
     loadimage(&ne3, "res\\pir\\new3.png");
-    static int newsPage = 1;
     cls();
     backA();
-
-    if (newsPage == 1) {
-        putimage_alpha(-10, 0, &ne1);
-    }
-    else if (newsPage == 2) {
-        putimage_alpha(-10, 0, &ne2);
-    }
-    else if (newsPage == 3) {
-        putimage_alpha(-10, 0, &ne3);
-    }
-
+    putimage_alpha(0, 30, &ne1);
     FlushBatchDraw();
-
-    ExMessage localM;
-    getmessage(&localM, EM_KEY);
-    if (localM.message == WM_KEYDOWN)
-    {
-        if (localM.vkcode == 'P') {
-            if (newsPage == 1) newsPage = 2;
-            else if (newsPage == 2) newsPage = 3;
+    getmessage(&m, EM_KEY);
+    getmessage(&m, EM_KEY);
+    if (m.vkcode == 'P') {
+        cls();
+        backA();
+        putimage_alpha(0, 30, &ne2);
+        FlushBatchDraw();
+        getmessage(&m, EM_KEY);
+        getmessage(&m, EM_KEY);
+        if (m.vkcode == 'P') {
+            cls();
+            backA();
+            putimage_alpha(0, 30, &ne3);
+            FlushBatchDraw();
+            getmessage(&m, EM_KEY);
+            getmessage(&m, EM_KEY);
+            if (m.vkcode == 'P') {
+                isIntoMenu = false;
+            }
+            else {
+                isIntoMenu = false;
+            }
         }
-        else if (localM.vkcode == 'S') {
+        else {
             isIntoMenu = false;
-            newsPage = 1;
         }
+    }
+    else {
+        isIntoMenu = false;
     }
 }
 
@@ -2750,100 +2755,51 @@ void peo() {
     putimage_alpha(0, 10, &peo1);
     FlushBatchDraw();
     getmessage(&localM, EM_KEY);
-    if (localM.message == WM_KEYDOWN) {
+    getmessage(&localM, EM_KEY);
+    if (localM.vkcode == 'D') {
+        cls();
+        backA();
+        putimage_alpha(0, 10, &peo2);
+        FlushBatchDraw();
+        getmessage(&localM, EM_KEY);
+        getmessage(&localM, EM_KEY);
         if (localM.vkcode == 'D') {
             cls();
             backA();
+            putimage_alpha(0, 10, &peo3);
             FlushBatchDraw();
+            getmessage(&localM, EM_KEY);
             getmessage(&localM, EM_KEY);
             if (localM.vkcode == 'D') {
                 cls();
                 backA();
-                putimage_alpha(0, 10, &peo2);
+                putimage_alpha(0, 10, &peo4);
                 FlushBatchDraw();
+                getmessage(&localM, EM_KEY);
                 getmessage(&localM, EM_KEY);
                 if (localM.vkcode == 'D') {
                     cls();
                     backA();
+                    putimage_alpha(0, 10, &peo5);
                     FlushBatchDraw();
+                    getmessage(&localM, EM_KEY);
                     getmessage(&localM, EM_KEY);
                     if (localM.vkcode == 'D') {
                         cls();
                         backA();
-                        putimage_alpha(0, 10, &peo3);
+                        putimage_alpha(0, 10, &peo6);
                         FlushBatchDraw();
+                        getmessage(&localM, EM_KEY);
                         getmessage(&localM, EM_KEY);
                         if (localM.vkcode == 'D') {
                             cls();
                             backA();
+                            putimage_alpha(0, 10, &peo7);
                             FlushBatchDraw();
                             getmessage(&localM, EM_KEY);
+                            getmessage(&localM, EM_KEY);
                             if (localM.vkcode == 'D') {
-                                cls();
-                                backA();
-                                putimage_alpha(0, 10, &peo4);
-                                FlushBatchDraw();
-                                getmessage(&localM, EM_KEY);
-                                if (localM.vkcode == 'D') {
-                                    cls();
-                                    backA();
-                                    FlushBatchDraw();
-                                    getmessage(&localM, EM_KEY);
-                                    if (localM.vkcode == 'D') {
-                                        cls();
-                                        backA();
-                                        putimage_alpha(0, 10, &peo5);
-                                        FlushBatchDraw();
-                                        getmessage(&localM, EM_KEY);
-                                        if (localM.vkcode == 'D') {
-                                            cls();
-                                            backA();
-                                            FlushBatchDraw();
-                                            getmessage(&localM, EM_KEY);
-                                            if (localM.vkcode == 'D') {
-                                                cls();
-                                                backA();
-                                                putimage_alpha(0, 10, &peo6);
-                                                FlushBatchDraw();
-                                                getmessage(&localM, EM_KEY);
-                                                if (localM.vkcode == 'D') {
-                                                    cls();
-                                                    backA();
-                                                    FlushBatchDraw();
-                                                    getmessage(&localM, EM_KEY);
-                                                    if (localM.vkcode == 'D') {
-                                                        cls();
-                                                        backA();
-                                                        putimage_alpha(0, 10, &peo7);
-                                                        FlushBatchDraw();
-                                                        getmessage(&localM, EM_KEY);
-                                                        if (localM.vkcode == 'F') {
-                                                            isIntoMenu = false;
-                                                        }
-                                                    }
-                                                    else {
-                                                        isIntoMenu = false;
-                                                    }
-                                                }
-                                                else {
-                                                    isIntoMenu = false;
-                                                }
-                                            }
-                                            else {
-                                                isIntoMenu = false;
-                                            }
-                                        }
-                                        else {
-                                            isIntoMenu = false;
-                                        }
-                                    }
-                                    else {
-                                        isIntoMenu = false;
-                                    }
-                                }
-                                else {
-                                    isIntoMenu = false;
-                                }
+                                isIntoMenu = false;
                             }
                             else {
                                 isIntoMenu = false;
@@ -2869,13 +2825,21 @@ void peo() {
             isIntoMenu = false;
         }
     }
-    FlushBatchDraw();
+    else {
+        isIntoMenu = false;
+    }
 }
 //dont move or try writing it(up these about "peo()") again!it is very soft !
 //i think if it is after many years.this coding all needn`t add anything new
 //if u dont know why it is this.u dont need to know or understand this
 //it is truly ¡­¡­what can i say !
 //it uses a bug to realise the game
+
+//look at the words up me
+//now these coding has repaired
+//i win myself
+//it is not soft !it is just like stones
+//maybe so,maybe not
 
 int main() {
     initgraph(1400, 800);
@@ -2979,7 +2943,7 @@ int main() {
     bool isIntoGame = false;//check if player enter the game
     bool isRealGame = false;//enter the body of the game
     bool isIntoArt = false;
-    bool isIntoLook = false;
+    bool isIntoLook = 1;
     //bool isIntoLook2 = false; È«¾Ö±äÁ¿
     bool isIntoLook3 = false;
     bool isIntoLook4 = false;
@@ -3070,9 +3034,9 @@ int main() {
                         advtan();
                         FlushBatchDraw();
                         getmessage(&m, EM_KEY);
+                        getmessage(&m, EM_KEY);
                         if (m.vkcode == 'O') {
                             isIntoMenu = false;
-                            break;
                         }
                         break;
                     }
@@ -3096,6 +3060,7 @@ int main() {
                     backA();
                     putimage_alpha(500, 100, &oth);
                     FlushBatchDraw();
+                    getmessage(&m, EM_KEY);
                     getmessage(&m, EM_KEY);
                     if (m.message == WM_KEYDOWN) {
                         if (m.vkcode == 'G') {
@@ -3153,6 +3118,7 @@ int main() {
                         isIntoLook5 = false;
                     }
                     getmessage(&m, EM_KEY);
+                    getmessage(&m, EM_KEY);
                     if (m.message == WM_KEYDOWN) {
                         if (m.vkcode == 'Z') {
                             if (isIntoLook == false) {
@@ -3169,6 +3135,10 @@ int main() {
                                 }
                             }
                             else {
+                                mciSendString(("stop res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("close res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("open res\\mus\\»¨º£.mp3"), 0, 0, 0);
+                                mciSendString(("play res\\mus\\»¨º£.mp3 repeat"), 0, 0, 0);
                                 cls();
                                 backA();
                                 putimage_alpha(20, 0, &math);
@@ -3177,6 +3147,10 @@ int main() {
                                 getmessage(&m, EM_KEY);
                                 if (m.ch == 13) {
                                     isIntoArt = true;
+                                    mciSendString(("stop res\\mus\\»¨º£.mp3"), 0, 0, 0);
+                                    mciSendString(("close res\\mus\\»¨º£.mp3"), 0, 0, 0);
+                                    mciSendString(("open res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                    mciSendString(("play res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3 repeat"), 0, 0, 0);
                                 }
                             }
                         }
@@ -3195,6 +3169,10 @@ int main() {
                                 }
                             }
                             else {
+                                mciSendString(("stop res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("close res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("open res\\mus\\º£À«Ìì¿Õ.mp3"), 0, 0, 0);
+                                mciSendString(("play res\\mus\\º£À«Ìì¿Õ.mp3 repeat"), 0, 0, 0);
                                 cls();
                                 backA();
                                 putimage_alpha(20, 0, &hike);
@@ -3203,6 +3181,10 @@ int main() {
                                 getmessage(&m, EM_KEY);
                                 if (m.ch == 13) {
                                     isIntoArt = true;
+                                    mciSendString(("stop res\\mus\\º£À«Ìì¿Õ.mp3"), 0, 0, 0);
+                                    mciSendString(("close res\\mus\\º£À«Ìì¿Õ.mp3"), 0, 0, 0);
+                                    mciSendString(("open res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                    mciSendString(("play res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3 repeat"), 0, 0, 0);
                                 }
                             }
                         }
@@ -3221,6 +3203,10 @@ int main() {
                                 }
                             }
                             else {
+                                mciSendString(("stop res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("close res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("open res\\mus\\Trip.mp3"), 0, 0, 0);
+                                mciSendString(("play res\\mus\\Trip.mp3 repeat"), 0, 0, 0);
                                 cls();
                                 backA();
                                 putimage_alpha(20, 0, &q213);
@@ -3229,6 +3215,10 @@ int main() {
                                 getmessage(&m, EM_KEY);
                                 if (m.ch == 13) {
                                     isIntoArt = true;
+                                    mciSendString(("stop res\\mus\\Trip.mp3"), 0, 0, 0);
+                                    mciSendString(("close res\\mus\\Trip.mp3"), 0, 0, 0);
+                                    mciSendString(("open res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                    mciSendString(("play res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3 repeat"), 0, 0, 0);
                                 }
                             }
                         }
@@ -3247,6 +3237,10 @@ int main() {
                                 }
                             }
                             else {
+                                mciSendString(("stop res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("close res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("open res\\mus\\Ç£Ë¿Ï·Î²×à.mp3"), 0, 0, 0);
+                                mciSendString(("play res\\mus\\Ç£Ë¿Ï·Î²×à.mp3 repeat"), 0, 0, 0);
                                 cls();
                                 backA();
                                 putimage_alpha(20, 0, &wj);
@@ -3255,6 +3249,10 @@ int main() {
                                 getmessage(&m, EM_KEY);
                                 if (m.ch == 13) {
                                     isIntoArt = true;
+                                    mciSendString(("stop res\\mus\\Ç£Ë¿Ï·Î²×à.mp3"), 0, 0, 0);
+                                    mciSendString(("close res\\mus\\Ç£Ë¿Ï·Î²×à.mp3"), 0, 0, 0);
+                                    mciSendString(("open res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                    mciSendString(("play res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3 repeat"), 0, 0, 0);
                                 }
                             }
                         }
@@ -3273,6 +3271,10 @@ int main() {
                                 }
                             }
                             else {
+                                mciSendString(("stop res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("close res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                mciSendString(("open res\\mus\\¸èÉùÓëÎ¢Ð¦.mp3"), 0, 0, 0);
+                                mciSendString(("play res\\mus\\¸èÉùÓëÎ¢Ð¦.mp3 repeat"), 0, 0, 0);
                                 cls();
                                 backA();
                                 putimage_alpha(20, 0, &hy);
@@ -3281,6 +3283,10 @@ int main() {
                                 getmessage(&m, EM_KEY);
                                 if (m.ch == 13) {
                                     isIntoArt = true;
+                                    mciSendString(("stop res\\mus\\¸èÉùÓëÎ¢Ð¦.mp3"), 0, 0, 0);
+                                    mciSendString(("close res\\mus\\¸èÉùÓëÎ¢Ð¦.mp3"), 0, 0, 0);
+                                    mciSendString(("open res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3"), 0, 0, 0);
+                                    mciSendString(("play res\\mus\\ÐÇÂ¶¹ÈÎïÓï.mp3 repeat"), 0, 0, 0);
                                 }
                             }
                         }
