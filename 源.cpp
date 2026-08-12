@@ -2874,6 +2874,30 @@ int main() {
     loadimage(&um5, "res\\pir\\um5.png");
     IMAGE um6;
     loadimage(&um6, "res\\pir\\um6.png");
+    mciSendString(("open res\\mus\\星露谷物语.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\星露谷物语.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\牵丝戏尾奏.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\traveler.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\traveler.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\Trip.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\Trip.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\辞九门回忆.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\辞九门回忆.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\歌声与微笑.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\歌声与微笑.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\海阔天空.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\海阔天空.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\花海.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\花海.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\康熙王朝.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\康熙王朝.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\命运交响曲.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\命运交响曲.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\起风了.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\起风了.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\弱水三千.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\弱水三千.mp3 repeat", 0, 0, 0);
     bool isIntoGame = false;//check if player enter the game
     bool isRealGame = false;//enter the body of the game
     bool isIntoArt = false;
@@ -2921,6 +2945,7 @@ int main() {
         //进入游戏内部[out-in]
         if (isIntoGame == true) {
             do {
+                mciSendString(("play res\\mus\\星露谷物语.mp3"), 0, 0, 0);
                 cls();
                 backA();
                 score = 0;
