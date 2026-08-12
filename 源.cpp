@@ -4108,7 +4108,7 @@ int main() {
                                         backA();
                                         putimage_alpha(200, 50, &po);
                                         printStory(40, 270, 170, "cy糖笑回应无事发生", 900, 1);
-                                        printStory(35, 200, 600, "安全回寝室开始写作业", 450, 1);
+                                        printStory(35, 200, 600, "安全回寝室开始抄作业", 450, 1);
                                         printStory(35, 750, 600, "你选择自己写", 450, 1);
                                         FlushBatchDraw();
                                         getmessage(&m, EM_KEY);
