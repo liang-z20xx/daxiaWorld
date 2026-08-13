@@ -59,6 +59,9 @@
 感谢你在互联网的茫茫大海中，找到了这个小世界。
 
 > *“编程不仅是写给计算机看的指令，更是写给过去自己的信。”*
+>
+> <img width="1300" height="731" alt="uncd3" src="https://github.com/user-attachments/assets/47d3ec87-ff58-4019-baa4-013a0b9521e7" />
+
 
 ---
 
