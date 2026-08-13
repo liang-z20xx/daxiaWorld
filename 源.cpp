@@ -5527,8 +5527,8 @@ int main() {
                                                                     arrA[35] = 1;
                                                                     getmessage(&m, EM_KEY);
                                                                     getmessage(&m, EM_KEY);
-                                                                    mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
-                                                                    mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
+                                                                    mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                                    mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
                                                                 }
                                                                 else {
                                                                     cls();
