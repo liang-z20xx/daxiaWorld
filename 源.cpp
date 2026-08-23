@@ -44,6 +44,13 @@ int v12 = 0; // 成就变量
 int come = 1; // 决定是否循环的变量 
 double score = 0; // 考试分数 
 bool isIntoLook2 = false;
+bool isIntoLook = false;
+bool isIntoLook3 = false;
+bool isIntoLook4 = false;
+bool isIntoLook5 = false;
+int hy1 = 0;
+int hy2 = 0;
+int hy3 = 0;
 
 ExMessage m;
 
@@ -396,6 +403,60 @@ void say() {
     getmessage(&m, EM_KEY);
     getmessage(&m, EM_KEY);
 }
+
+// ==================== 存档系统开始 ====================
+void saveGame() {
+    FILE* fp = fopen("daxia_save.txt", "w");
+    if (fp == NULL) return;
+
+    // 结局状态
+    for (int i = 0; i < numS; i++) fprintf(fp, "%d ", arrS[i]);
+    for (int i = 0; i < numA; i++) fprintf(fp, "%d ", arrA[i]);
+    for (int i = 0; i < numB; i++) fprintf(fp, "%d ", arrB[i]);
+    for (int i = 0; i < numC; i++) fprintf(fp, "%d ", arrC[i]);
+    for (int i = 0; i < numD; i++) fprintf(fp, "%d ", arrD[i]);
+    for (int i = 0; i < numR; i++) fprintf(fp, "%d ", arrR[i]);
+
+    // 成就变量
+    fprintf(fp, "\n%d %d %d %d %d %d %d %d %d %d %d %d",
+        v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12);
+
+    // 彩蛋解锁状态
+    fprintf(fp, "\n%d %d %d %d %d",
+        (int)isIntoLook, (int)isIntoLook2, (int)isIntoLook3, (int)isIntoLook4, (int)isIntoLook5);
+
+    fclose(fp);
+}
+
+void loadGame() {
+    FILE* fp = fopen("daxia_save.txt", "r");
+    if (fp == NULL) return; // 没有存档就不管
+
+    // 结局状态
+    for (int i = 0; i < numS; i++) fscanf(fp, "%d", &arrS[i]);
+    for (int i = 0; i < numA; i++) fscanf(fp, "%d", &arrA[i]);
+    for (int i = 0; i < numB; i++) fscanf(fp, "%d", &arrB[i]);
+    for (int i = 0; i < numC; i++) fscanf(fp, "%d", &arrC[i]);
+    for (int i = 0; i < numD; i++) fscanf(fp, "%d", &arrD[i]);
+    for (int i = 0; i < numR; i++) fscanf(fp, "%d", &arrR[i]);
+
+    // 成就变量
+    fscanf(fp, "%d %d %d %d %d %d %d %d %d %d %d %d",
+        &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12);
+
+    // 彩蛋解锁状态
+    fscanf(fp, "%d %d %d %d %d",
+        (int*)&isIntoLook, (int*)&isIntoLook2, (int*)&isIntoLook3, (int*)&isIntoLook4, (int*)&isIntoLook5);
+
+    // 读取《弘毅班》文章的三段解锁进度
+    fscanf(fp, "%d %d %d", &hy1, &hy2, &hy3);
+
+    // 
+    
+
+    fclose(fp);
+}
+// ==================== 存档系统结束 ====================
 
 void advtan() {
     backA();
@@ -2846,6 +2907,7 @@ int main() {
     BeginBatchDraw();
     setbkmode(TRANSPARENT);
     srand((unsigned int)time(NULL));
+    loadGame();
     IMAGE str1;
     loadimage(&str1, "res\\pir\\start1.jpeg");
     IMAGE pia;
@@ -2943,19 +3005,14 @@ int main() {
     bool isIntoGame = false;//check if player enter the game
     bool isRealGame = false;//enter the body of the game
     bool isIntoArt = false;
-    bool isIntoLook = false;
-    //bool isIntoLook2 = false; 全局变量
-    bool isIntoLook3 = false;
-    bool isIntoLook4 = false;
-    bool isIntoLook5 = false;
+    //bool isIntoLook1-5 = false; 全局变量
+    
     int choiceMenu = 0;//choice the type of the menu
     int NewsPageNumber = 0;//the page of news to protect the bug
     int start = time(0);
     int ending = start;
     int gtime = 0;
-    int hy1 = 0;
-    int hy2 = 0;
-    int hy3 = 0;
+    
     while (1) {
         getmessage(&m, EM_MOUSE | EM_KEY);
         cls();
@@ -2995,6 +3052,9 @@ int main() {
                 if (isIntoMenu == false && isRealGame == false) {
                     putimage_alpha(500, 170, &menu);
                 }
+                settextcolor(BLACK);
+                settextstyle(70, 0, "微软雅黑");
+                outtextxy(100, 70, "按【0】退出并存档");
                 FlushBatchDraw();
                 if (isIntoMenu == false) {
                     if (peekmessage(&m, EM_KEY)) {
@@ -3018,6 +3078,12 @@ int main() {
                             else if (m.vkcode == 'T') {
                                 choiceMenu = 5;
                                 isIntoMenu = true;
+                            }
+                            else if (m.vkcode == '0') {
+                                saveGame();
+                                closegraph();
+                                _getch();
+                                return 0;
                             }
                             Sleep(10);
                         }
@@ -6020,6 +6086,7 @@ int main() {
                         getmessage(&m, EM_KEY);
                         if (m.ch == 13) {
                             say();
+                            saveGame();
                             closegraph();
                             _getch();
                             return 0;
@@ -6119,6 +6186,7 @@ int main() {
                     getmessage(&m, EM_KEY);
                     settextcolor(BLACK);
                     if (m.vkcode == '0') {
+                        saveGame();
                         closegraph();
                         _getch();
                         return 0;
@@ -6137,6 +6205,7 @@ int main() {
         }
         FlushBatchDraw();
     }
+    saveGame();
     closegraph();
     return 0;
 }
