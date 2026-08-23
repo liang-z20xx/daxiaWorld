@@ -404,10 +404,70 @@ void say() {
     getmessage(&m, EM_KEY);
 }
 
-// ==================== 存档系统开始 ====================
+// ==================== 存档系统开始（终极防篡改版） ====================
+
+// 获取极其复杂且唯一的校验码（使用加权质数 + 位运算混淆 + 随机种子盐值）
+unsigned long long getComplexChecksum(int seed) {
+    unsigned long long sum = 0;
+
+    // 1. 用固定质数序列作为权重，防止简单求和被看穿
+    const int prime[6] = { 37, 53, 71, 89, 107, 131 };
+
+    for (int i = 0; i < numS; i++) sum += (unsigned long long)arrS[i] * prime[0] * (i + 1);
+    for (int i = 0; i < numA; i++) sum += (unsigned long long)arrA[i] * prime[1] * (i + 1);
+    for (int i = 0; i < numB; i++) sum += (unsigned long long)arrB[i] * prime[2] * (i + 1);
+    for (int i = 0; i < numC; i++) sum += (unsigned long long)arrC[i] * prime[3] * (i + 1);
+    for (int i = 0; i < numD; i++) sum += (unsigned long long)arrD[i] * prime[4] * (i + 1);
+    for (int i = 0; i < numR; i++) sum += (unsigned long long)arrR[i] * prime[5] * (i + 1);
+
+    // 2. 成就变量（全部乘以大质数，增加破解难度）
+    sum += (unsigned long long)v1 * 223;
+    sum += (unsigned long long)v2 * 227;
+    sum += (unsigned long long)v3 * 229;
+    sum += (unsigned long long)v4 * 233;
+    sum += (unsigned long long)v5 * 239;
+    sum += (unsigned long long)v6 * 241;
+    sum += (unsigned long long)v7 * 251;
+    sum += (unsigned long long)v8 * 257;
+    sum += (unsigned long long)v9 * 263;
+    sum += (unsigned long long)v10 * 269;
+    sum += (unsigned long long)v11 * 271;
+    sum += (unsigned long long)v12 * 277;
+
+    // 3. 彩蛋和文章状态
+    sum += (unsigned long long)isIntoLook * 281;
+    sum += (unsigned long long)isIntoLook2 * 283;
+    sum += (unsigned long long)isIntoLook3 * 293;
+    sum += (unsigned long long)isIntoLook4 * 307;
+    sum += (unsigned long long)isIntoLook5 * 311;
+    sum += (unsigned long long)hy1 * 313;
+    sum += (unsigned long long)hy2 * 317;
+    sum += (unsigned long long)hy3 * 331;
+
+    // 4. 位运算混淆（乘上一个巨大的质数，再做异或运算，使结果乱序）
+    sum = sum * 0x9E3779B9ULL;
+    sum ^= (sum >> 47);
+    sum ^= (sum << 11);
+    sum = sum * 0x85EBCA6BULL;
+    sum ^= (sum >> 27);
+
+    // 5. 加入随机种子（盐值），使每次生成的校验码完全不同（防止玩家发现规律）
+    sum += (unsigned long long)seed * 0x27D4EB2FULL;
+
+    return sum;
+}
+
 void saveGame() {
     FILE* fp = fopen("daxia_save.txt", "w");
     if (fp == NULL) return;
+
+    // 生成当前的随机盐值（存进文件开头，用于正确读取校验）
+    int salt = rand() % 100000 + 12345;
+    fprintf(fp, "%d\n", salt);
+
+    // 根据盐值生成校验码，放在第二行（保证唯一性）
+    unsigned long long checksum = getComplexChecksum(salt);
+    fprintf(fp, "%llu\n", checksum);
 
     // 结局状态
     for (int i = 0; i < numS; i++) fprintf(fp, "%d ", arrS[i]);
@@ -425,34 +485,55 @@ void saveGame() {
     fprintf(fp, "\n%d %d %d %d %d",
         (int)isIntoLook, (int)isIntoLook2, (int)isIntoLook3, (int)isIntoLook4, (int)isIntoLook5);
 
+    // 记录《弘毅班》文章的三段解锁进度
+    fprintf(fp, "\n%d %d %d", hy1, hy2, hy3);
+
     fclose(fp);
 }
 
 void loadGame() {
     FILE* fp = fopen("daxia_save.txt", "r");
-    if (fp == NULL) return; // 没有存档就不管
+    if (fp == NULL) return;
 
-    // 结局状态
+    // 读取随机盐值
+    int salt = 0;
+    int result = fscanf(fp, "%d\n", &salt);
+    if (result == EOF) {
+        fclose(fp);
+        return;
+    }
+
+    // 读取存储的校验码
+    unsigned long long storedChecksum = 0;
+    fscanf(fp, "%llu\n", &storedChecksum);
+
+    // 读取其余数据（顺序严格对应）
     for (int i = 0; i < numS; i++) fscanf(fp, "%d", &arrS[i]);
     for (int i = 0; i < numA; i++) fscanf(fp, "%d", &arrA[i]);
     for (int i = 0; i < numB; i++) fscanf(fp, "%d", &arrB[i]);
     for (int i = 0; i < numC; i++) fscanf(fp, "%d", &arrC[i]);
     for (int i = 0; i < numD; i++) fscanf(fp, "%d", &arrD[i]);
     for (int i = 0; i < numR; i++) fscanf(fp, "%d", &arrR[i]);
-
-    // 成就变量
     fscanf(fp, "%d %d %d %d %d %d %d %d %d %d %d %d",
         &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12);
-
-    // 彩蛋解锁状态
     fscanf(fp, "%d %d %d %d %d",
         (int*)&isIntoLook, (int*)&isIntoLook2, (int*)&isIntoLook3, (int*)&isIntoLook4, (int*)&isIntoLook5);
-
-    // 读取《弘毅班》文章的三段解锁进度
     fscanf(fp, "%d %d %d", &hy1, &hy2, &hy3);
 
-    // 
-    
+    // 计算实际数据的校验码，验证是否被篡改
+    unsigned long long checksum = getComplexChecksum(salt);
+    if (checksum != storedChecksum) {
+        // 篡改，全部清零！
+        for (int i = 0; i < numS; i++) arrS[i] = 0;
+        for (int i = 0; i < numA; i++) arrA[i] = 0;
+        for (int i = 0; i < numB; i++) arrB[i] = 0;
+        for (int i = 0; i < numC; i++) arrC[i] = 0;
+        for (int i = 0; i < numD; i++) arrD[i] = 0;
+        for (int i = 0; i < numR; i++) arrR[i] = 0;
+        v1 = v2 = v3 = v4 = v5 = v6 = v7 = v8 = v9 = v10 = v11 = v12 = 0;
+        isIntoLook = isIntoLook2 = isIntoLook3 = isIntoLook4 = isIntoLook5 = 0;
+        hy1 = hy2 = hy3 = 0;
+    }
 
     fclose(fp);
 }
