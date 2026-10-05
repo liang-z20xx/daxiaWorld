@@ -6157,7 +6157,6 @@ int main() {
                     char scoreStr7[20];
                     sprintf_s(scoreStr7, "解锁结局数量： %d", endsum);
                     outtextxy(550, 200, scoreStr7);
-                    settextstyle(30, 0, "微软雅黑");
                     if (endsum == total) {
                         settextcolor(RED);
                         outtextxy(150, 485, "您已通关游戏！");
