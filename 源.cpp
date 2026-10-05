@@ -3059,6 +3059,14 @@ int main() {
     loadimage(&um5, "res\\pir\\um5.png");
     IMAGE um6;
     loadimage(&um6, "res\\pir\\um6.png");
+    IMAGE arb;
+    loadimage(&arb, "res\\pir\\arb.jpg");
+    IMAGE army;
+    loadimage(&army, "res\\pir\\army.jpg");
+    IMAGE g9;
+    loadimage(&g9, "res\\pir\\g9.jpg");
+    IMAGE go;
+    loadimage(&u3, "res\\pir\\gold.jpg");
     mciSendString(("open res\\mus\\星露谷物语.mp3"), 0, 0, 0);
     mciSendString("set res\\mus\\星露谷物语.mp3 repeat", 0, 0, 0);
     mciSendString(("open res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
@@ -3083,6 +3091,8 @@ int main() {
     mciSendString("set res\\mus\\起风了.mp3 repeat", 0, 0, 0);
     mciSendString(("open res\\mus\\弱水三千.mp3"), 0, 0, 0);
     mciSendString("set res\\mus\\弱水三千.mp3 repeat", 0, 0, 0);
+    mciSendString(("open res\\mus\\送别.mp3"), 0, 0, 0);
+    mciSendString("set res\\mus\\送别.mp3 repeat", 0, 0, 0);
     bool isIntoGame = false;//check if player enter the game
     bool isRealGame = false;//enter the body of the game
     bool isIntoArt = false;
@@ -4309,7 +4319,7 @@ int main() {
                                                     backA();
                                                     putimage_alpha(200, 50, &po);
                                                     settextcolor(RED);
-                                                    printStory(40, 270, 130, "出乎意料的是，挖机居然没有制裁你。你睡眼朦胧地盯着挖机，看着黑板上的二次函数，还有一位同学的激情讲题（这位同学就是作者本人）.你忽然发觉——自己的青春都TM地留着干了什么？为什么要追悔莫及呢？没有任何必要了，保持奋斗，CY在后方大迈步地催着！", 900, 2);
+                                                    printStory(40, 270, 130, "出乎意料的是，挖机居然没有制裁你。你睡眼朦胧地盯着挖机，看着黑板上的二次函数，还有一位同学的激情讲题（这位同学就是作者本人）.你忽然发觉——自己的青春都TM地留着干了什么？为什么要追悔莫及呢？没有任何必要了，保持奋斗，CY在后方大迈步地催着！但是这时，你忽然又有了一丝怀古伤今的情怀", 900, 2);
                                                     printStory(40, 200, 600, "等级：A", 450, 1);
                                                     printStory(40, 750, 600, "任意键退出", 450, 1);
                                                     FlushBatchDraw();
