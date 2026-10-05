@@ -4827,8 +4827,8 @@ int main() {
                                                                     if (m.vkcode == 'M') {
                                                                         mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
                                                                         mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
-                                                                        mciSendString(("open res\\mus\\traveler.mp3"), 0, 0, 0);
-                                                                        mciSendString(("play res\\mus\\traveler.mp3 repeat"), 0, 0, 0);
+                                                                        mciSendString(("open res\\mus\\送别.mp3"), 0, 0, 0);
+                                                                        mciSendString(("play res\\mus\\送别.mp3 repeat"), 0, 0, 0);
                                                                         cls();
                                                                         backA();
                                                                         putimage_alpha(200, 50, &po);
@@ -4841,8 +4841,8 @@ int main() {
                                                                         arrS[21] = 1;
                                                                         getmessage(&m, EM_KEY);
                                                                         getmessage(&m, EM_KEY);
-                                                                        mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
-                                                                        mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                                        mciSendString(("stop res\\mus\\送别.mp3"), 0, 0, 0);
+                                                                        mciSendString(("close res\\mus\\送别.mp3"), 0, 0, 0);
                                                                     }
                                                                     else {
                                                                         mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
@@ -5705,8 +5705,8 @@ int main() {
                                                                 if (m.vkcode == 'M') {
                                                                     mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
                                                                     mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
-                                                                    mciSendString(("open res\\mus\\traveler.mp3"), 0, 0, 0);
-                                                                    mciSendString(("play res\\mus\\traveler.mp3 repeat"), 0, 0, 0);
+                                                                    mciSendString(("open res\\mus\\送别.mp3"), 0, 0, 0);
+                                                                    mciSendString(("play res\\mus\\送别.mp3 repeat"), 0, 0, 0);
                                                                     cls();
                                                                     backA();
                                                                     putimage_alpha(200, 50, &po);
@@ -5720,8 +5720,8 @@ int main() {
                                                                     arrA[35] = 1;
                                                                     getmessage(&m, EM_KEY);
                                                                     getmessage(&m, EM_KEY);
-                                                                    mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
-                                                                    mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                                    mciSendString(("stop res\\mus\\送别.mp3"), 0, 0, 0);
+                                                                    mciSendString(("close res\\mus\\送别.mp3"), 0, 0, 0);
                                                                 }
                                                                 else {
                                                                     cls();
