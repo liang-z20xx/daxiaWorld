@@ -3066,7 +3066,7 @@ int main() {
     IMAGE g9;
     loadimage(&g9, "res\\pir\\g9.jpg");
     IMAGE go;
-    loadimage(&u3, "res\\pir\\gold.jpg");
+    loadimage(&go, "res\\pir\\gold.jpg");
     mciSendString(("open res\\mus\\星露谷物语.mp3"), 0, 0, 0);
     mciSendString("set res\\mus\\星露谷物语.mp3 repeat", 0, 0, 0);
     mciSendString(("open res\\mus\\牵丝戏尾奏.mp3"), 0, 0, 0);
@@ -4313,8 +4313,8 @@ int main() {
                                                 if (m.vkcode == 'M' && m.message == WM_KEYDOWN) {
                                                     mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
                                                     mciSendString(("close res\\mus\\起风了.mp3"), 0, 0, 0);
-                                                    mciSendString(("open res\\mus\\traveler.mp3"), 0, 0, 0);
-                                                    mciSendString(("play res\\mus\\traveler.mp3 repeat"), 0, 0, 0);
+                                                    mciSendString(("open res\\mus\\送别.mp3"), 0, 0, 0);
+                                                    mciSendString(("play res\\mus\\送别.mp3 repeat"), 0, 0, 0);
                                                     cls();
                                                     backA();
                                                     putimage_alpha(200, 50, &po);
@@ -4327,8 +4327,44 @@ int main() {
                                                     arrA[21] = 1;
                                                     getmessage(&m, EM_KEY);
                                                     getmessage(&m, EM_KEY);
-                                                    mciSendString(("stop res\\mus\\traveler.mp3"), 0, 0, 0);
-                                                    mciSendString(("close res\\mus\\traveler.mp3"), 0, 0, 0);
+                                                    settextstyle(40, 0, "仿宋");
+                                                    cls();
+                                                    backA();
+                                                    putimage(150, 0, &arb);
+                                                    outtextxy(5, 5, "灵宝一高艺术楼，enter继续");
+                                                    outtextxy(6, 5, "灵宝一高艺术楼，enter继续");
+                                                    FlushBatchDraw();
+                                                    getmessage(&m, EM_KEY);
+                                                    getmessage(&m, EM_KEY);
+                                                    settextstyle(40, 0, "仿宋");
+                                                    cls();
+                                                    backA();
+                                                    putimage(150, 0, &go);
+                                                    outtextxy(5, 5, "灵宝一高西花园，enter继续");
+                                                    outtextxy(6, 5, "灵宝一高西花园，enter继续");
+                                                    FlushBatchDraw();
+                                                    getmessage(&m, EM_KEY);
+                                                    getmessage(&m, EM_KEY);
+                                                    settextstyle(40, 0, "仿宋");
+                                                    cls();
+                                                    backA();
+                                                    putimage(100, 0, &g9);
+                                                    outtextxy(5, 5, "弘毅班，enter继续");
+                                                    outtextxy(6, 5, "弘毅班，enter继续");
+                                                    FlushBatchDraw();
+                                                    getmessage(&m, EM_KEY);
+                                                    getmessage(&m, EM_KEY);
+                                                    settextstyle(40, 0, "仿宋");
+                                                    cls();
+                                                    backA();
+                                                    putimage(50, 100, &army);
+                                                    outtextxy(5, 5, "军训合影，enter继续");
+                                                    outtextxy(6, 5, "军训合影，enter继续");
+                                                    FlushBatchDraw();
+                                                    getmessage(&m, EM_KEY);
+                                                    getmessage(&m, EM_KEY);
+                                                    mciSendString(("stop res\\mus\\送别.mp3"), 0, 0, 0);
+                                                    mciSendString(("close res\\mus\\送别.mp3"), 0, 0, 0);
                                                 }
                                                 else {
                                                     mciSendString(("stop res\\mus\\起风了.mp3"), 0, 0, 0);
